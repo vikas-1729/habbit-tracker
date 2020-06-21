@@ -35,9 +35,6 @@ form{
 #completeHabbit .form-control{
     margin-bottom: 20px;
 }
-.addHabbitForm{
- 
-}
 .addHabbit{
     width: 75%;
     display: inline-block;
@@ -49,4 +46,29 @@ form{
 .text{
     font-weight: bold;
     font-family: sans-serif;
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list-item{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+.normalText{
+    font-weight: 500;
+    font-size: 1.2rem;
+ 
+}
+#header{
+    margin: auto;
+    font-family: sans-serif;
+    font-size: 2.5rem;
+    /* left: 50%; */
+    display: block;
+    
 }

@@ -16,27 +16,45 @@
        <!--dividing all body into three part left mid right-->
        <div id="mainContainer" class="border">
             <div id="left" class="border">
+                <!-- add to habbit form it is only for name after it we go for more details-->
                <form action="/addtoHabit" method="post" class="addHabbitForm">
                    <input type="text" name="addHabbit" class="addHabbit form-control" 
                    placeholder=" enter your habit to add " autocomplete="off" required>
                 <button type="submit" class="btn btn-success" id="submitbtn">ADD IT </button>
                </form>
-               <ul class="">
-                  <% for(let i of habbitList) {%>
-                   <li><%= i._id %></li>
-                   <li>
-                       <div>
-                           
-                       </div>
-                   </li>
-                <%}%>
-               </ul>
+               <table class="table table-striped">
+                <thead class=" thead-dark">   
+                    <tr scope="row">
+                       <th scope="col">Habbit-Name</th>
+                       <th scope="col">Category</th>
+                       <th scope="col">Message</th>
+                       <th scope="col">View</th>
+                   </tr>
+                </thead>
+                <tbody>                   
+                    <% for(let obj of habbitList){%>
+                        <tr scope="row">
+                            <th scope="col" class="normalText"><%= obj['habbit']%></th>
+                            <th scope="col" class="normalText"><%= obj['category']%></th>
+                            <th scope="col" class="normalText">
+                                <button class="btn btn-danger" onclick="window.location='/deleteMe?id=<%= obj._id %>'">Delete</button>
+                            </th>
+                            <th scope="col" class="normalText">
+                            <button class="btn btn-primary" onclick="window.location='/viewMe?id=<%= obj._id %>'">View It</button>
+                        </th>
+                        </tr>
+                <% } %>
+                </tbody>
+              
+               </table>
 
            </div>
            <div id="right" class="border">
-               <%= locals.habbit %>
-               <% if(locals.complete=='true') {%>
-               <%- include('complete.ejs'); %>
+               <!-- here we always check value of complete which comes with controller by default but when we go after filling above
+            form we change it to true-->
+               <% if(locals.complete==true) {%>
+                <header id="header"><%= locals.habbit %></header>
+                <%- include('complete.ejs'); %>
                <% }%>
            </div>
 

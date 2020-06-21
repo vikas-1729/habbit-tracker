@@ -1,0 +1,82 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+#mainContainer{
+    height: auto;
+    width:80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 20px;;
+}
+.outer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+}
+.inner{
+    position: relative;
+    height:250px;
+    width: 24.8%;
+    border: 2px solid black;
+    
+}
+.date{
+    display: block;
+    height:100px;
+    font-size: 1.3rem;;
+    overflow-wrap: break-word;
+    width: 50%;;
+}
+.viewButton{
+    position: absolute;
+    top: 10%;
+    right: 5%;
+}
+.work{
+    display: block;
+    height:100px;
+  
+    overflow-wrap: break-word;
+    width: 100%;
+    margin: auto;
+}
+.option{
+    margin-left: 30px;;
+}
+#option-radio1{
+    margin-left: 33px;
+}
+#option-radio2{
+    margin-left: 22px;
+}
+.status-work{
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: larger;
+    color: green;
+    margin-bottom: 30px;
+}
+#heading-name{
+    width: 70%;
+    height: 50%;
+    margin: auto;
+    
+}
+#header{
+    margin: auto;
+    font-family: sans-serif;
+    color:grey;
+    font-size: 2.5rem;
+    /* left: 50%; */
+    display: block;
+    margin-left: 40%;
+}
+#header > .btn{
+    float: right;
+   margin-right:  30px;
+    font-size: 1.5rem;
+}

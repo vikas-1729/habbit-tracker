@@ -19,7 +19,10 @@ const db=require('./config/index');
 
   //now use router to route
   app.use(express.urlencoded());
-
+// requiring moment.js for settng time 
+  const moment=require('moment');
+// make it available in all ejs...
+  app.locals.moment=moment;
 //app.use(express.urlencoded);
   app.use('/',require('./router'));
  app.listen(port,function(err){
@@ -29,3 +32,5 @@ const db=require('./config/index');
     }
     console.log('wow connected to port',port);
  });
+
+ 

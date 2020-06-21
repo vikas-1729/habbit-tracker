@@ -1,0 +1,61 @@
+<!-- this is for viewing the routine-->
+<html>
+    <head>
+        <title>hlo</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <!--adding font awesome cdn-->
+        <link rel="stylesheet" href="css/style2.css">
+    </head>
+    <body>
+        <header id="header"><%=locals.data.habbit %>
+        <button class='btn btn-link' onclick="window.location='/';">Home</button>
+        </header>
+        <div id="mainContainer">
+            <div class="outer">
+                <div class="inner"><!-- for showing info abiut habbit like message-->
+                        <span id ="heading-name" class="date"> 
+                        you can update it also by saving your change
+                        <br>
+                        Message:
+                        <%=locals.data.message %>
+                        
+                        </span>
+                </div>
+                <% for(let i=0;i<3;i++){%>
+                <div class="inner">
+                    <!-- use subrtract so that we decrease one day -->
+                   <span class="date"><%= moment().subtract(i,"days").format('dddd') %>
+                    <%=moment().subtract(i,"days").format('MMMM Do YYYY'); %> 
+                   </span>
+                   <span class="status-work"><strong>Status:</strong><%= data['daily-work'][i];%></span>
+                   <form class="work" action="/saveWork?id=<%= id %>&index=<%=i%>"method="post">
+                    <input type="radio" name="workValue" value="Done"><span class="option">Done</span><br>
+                    <input type="radio" name="workValue" id="option-radio1"  value="Not-Done"><span class="option">Not-Done</span><br>
+                    <input type="radio" name="workValue"  id="option-radio2" value="Not-Fill" checked><span class="option">Not-Fill</span><br>
+                    <button class='btn btn-primary viewButton'>Save</button>
+                 </form> 
+            
+                </div>
+                <% }%>
+             </div>
+            <div class="outer">
+                <% for(let i=3;i<7;i++){%>
+                    <div class="inner">
+                       <span class="date"><%= moment().subtract(i,"days").format('dddd') %>
+                        <%=moment().subtract(i,"days").format('MMMM Do YYYY'); %> 
+                       </span>
+                       <span class="status-work"><strong>Status:</strong><%= data['daily-work'][i];%></span>
+                       <form class="work" action="/saveWork?id=<%= id %>&index=<%=i%>"method="post">
+                           
+                        <input type="radio" name="workValue" value="Done"><span class="option">Done</span><br>
+                        <input type="radio" name="workValue" id="option-radio1"  value="Not-Done"><span class="option">Not-Done</span><br>
+                        <input type="radio" name="workValue"  id="option-radio2" value="Not-Fill" checked><span class="option">Not-Fill</span><br>
+                        <button class='btn btn-primary viewButton'>Save</button>
+                     </form> 
+                
+                    </div>
+                    <% }%>
+            </div>
+            
+    </body>
+</html>
