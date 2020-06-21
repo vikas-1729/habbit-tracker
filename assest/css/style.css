@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0 20px;
+}
+header{
+    text-align: center;
+}
+#mainContainer{
+    width: 100%;
+    height:auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+#mainContainer #left{
+    width:60%;
+    height: auto;
+
+
+}
+#mainContainer #right{
+    width: 30%;
+   height:auto;
+}
+
+.border{
+    border:2px solid black;
+}
+form{
+    padding-left: 30px;
+    padding-top: 10px;;
+}
+#completeHabbit .form-control{
+    margin-bottom: 20px;
+}
+.addHabbitForm{
+ 
+}
+.addHabbit{
+    width: 75%;
+    display: inline-block;
+}
+#submitbtn{
+   margin-bottom: 7px;
+    margin-left: 10px;;
+}
+.text{
+    font-weight: bold;
+    font-family: sans-serif;
+}

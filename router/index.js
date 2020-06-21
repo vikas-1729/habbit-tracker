@@ -5,4 +5,7 @@ const router=express.Router();
 // taking controller
 const controller=require('../controller/index');
 router.get('/',controller.home);
+router.post('/addtoHabit',controller.addHabbit,controller.home);
+// handling the post form which come after we add complete info
+router.post('/addthisHabbit',controller.addthisHabbit);
 module.exports=router;

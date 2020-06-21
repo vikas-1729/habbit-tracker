@@ -1,0 +1,10 @@
+
+<form action="/addthisHabbit" method="post" class="form-group" id="completeHabbit">
+    <input type="text" value='<%= locals.habbit%> 'name="habbit" hidden>
+    <label class="text">Enter your time to do it</label>
+    <input type="time" class="form-control" name="time" placeholder="time at which you do this" autocomplete="off">
+    <input type="text" class="form-control" name="category" placeholder="enter your category i.e gym school" autocomplete="off" >
+    <input type="text" class="form-control" name="message" placeholder="any message releated to habit" autocomplete="off"> 
+    <button type="submit" class="btn btn-success" id="submitbtnComplete">ADD IT </button>
+
+</form>
